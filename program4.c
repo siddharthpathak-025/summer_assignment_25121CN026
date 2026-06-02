@@ -1,16 +1,20 @@
 #include<stdio.h>
 int main(){
-int n,c=0;
-printf("enter a number:");
-scanf("%d", &n);
-while(n!=0){
+  int n, x, rev=0, digit;
+  printf("enter the number :");
+  scanf("%d", &n);
+  x=n;
+  while(n>0){
+    digit=n%10;
+    rev=rev*10+digit;
     n=n/10;
-    c++;
-}
-printf("number of digits=%d", c);
-return 0;
-
-
-
+  }
+  if(x==rev){
+    printf("palendrome number");
+  }
+  else{
+    printf("not a palendrome number");
+  }
+  return 0;
 
 }

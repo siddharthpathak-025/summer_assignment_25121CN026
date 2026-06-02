@@ -1,10 +1,14 @@
 #include<stdio.h>
 int main(){
-    int n;
-    printf("enter the number:");
-    scanf("%d",&n);
-    for(int i=1;i<=10;i++){
-        printf("%d*%d=%d\n", i,n,n*i);
-    }
-    return 0;
+   int n,rev=0,digit;
+   printf("enter a number :");
+   scanf("%d",&n);
+   while(n>0){
+    digit=n%10;
+    rev=rev*10+digit;
+    n=n/10;
+   }
+printf("reverse of the number is %d", rev);
+return 0;
+
 }
