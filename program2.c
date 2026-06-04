@@ -1,14 +1,29 @@
-#include<stdio.h>
-int main(){
-   int n,rev=0,digit;
-   printf("enter a number :");
-   scanf("%d",&n);
-   while(n>0){
-    digit=n%10;
-    rev=rev*10+digit;
-    n=n/10;
-   }
-printf("reverse of the number is %d", rev);
-return 0;
+#include <stdio.h>
 
+int main() {
+    int start, end, i, j, prime;
+
+    printf("Enter start and end of range: ");
+    scanf("%d %d", &start, &end);
+
+    printf("Prime numbers are:\n");
+
+    for (i = start; i <= end; i++) {
+        if (i <= 1)
+            continue;
+
+        prime = 1;
+
+        for (j = 2; j <= i / 2; j++) {
+            if (i % j == 0) {
+                prime = 0;
+                break;
+            }
+        }
+
+        if (prime)
+            printf("%d ", i);
+    }
+
+    return 0;
 }
