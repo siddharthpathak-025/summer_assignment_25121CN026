@@ -1,23 +1,26 @@
 #include <stdio.h>
 
 int main() {
-    int a, b, x, y, gcd, lcm;
+    int start, end, num, temp, rem, sum;
+    printf("enter starting number: ");
+    scanf("%d", &start);  
+    printf("enter ending number: ");
+    scanf("%d", &end);
 
-    printf("Enter two numbers: ");
-    scanf("%d %d", &a, &b);
+    printf("armstrong numbers are:\n");
 
-    x = a;
-    y = b;
+    for(num=start; num<=end; num++){
+        temp=num;
+        sum=0;
+      while (temp != 0) {
+            rem = temp % 10;
+            sum = sum + (rem * rem * rem);
+            temp = temp / 10;
+        }
 
-    while (y != 0) {
-        gcd = y;
-        y = x % y;
-        x = gcd;
+        if(sum==num)
+            printf("%d ", num);
     }
-
-    lcm = (a * b) / x;
-
-    printf("LCM = %d", lcm);
 
     return 0;
 }

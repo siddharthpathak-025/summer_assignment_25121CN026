@@ -1,14 +1,23 @@
 #include<stdio.h>
-int main(){
-    int n,digit;
-    int product=1;
-    printf("enter the number :");
+
+int main() {
+    int n, t, rem, sum = 0;
+
+    printf("enter a number: ");
     scanf("%d", &n);
-    while(n>0){
-        digit=n%10;
-        product=product*digit;
-        n=n/10;
+
+    t=n;
+
+    while(t!=0){
+        rem = t%10;
+        sum = sum+(rem*rem*rem);
+        t = t/10;
     }
-    printf("product of digit=%d", product);
+
+    if(sum==n)
+        printf("armstrong Number");
+    else
+        printf("not armstrong number");
+
     return 0;
 }

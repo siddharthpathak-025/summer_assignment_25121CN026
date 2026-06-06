@@ -1,28 +1,23 @@
-#include <stdio.h>
+#include<stdio.h>
 
-int main() {
-    int start, end, i, j, prime;
+int main()
+ {
+    int n, a = 0, b = 1, c, i;
 
-    printf("Enter start and end of range: ");
-    scanf("%d %d", &start, &end);
+    printf("enter n: ");
+    scanf("%d", &n);
 
-    printf("Prime numbers are:\n");
-
-    for (i = start; i <= end; i++) {
-        if (i <= 1)
-            continue;
-
-        prime = 1;
-
-        for (j = 2; j <= i / 2; j++) {
-            if (i % j == 0) {
-                prime = 0;
-                break;
-            }
+    if(n==1)
+        printf("nth fibonacci term = %d", a);
+    else if(n==2)
+        printf("nth fibonacci term = %d", b);
+    else{
+        for(i = 3; i <= n; i++) {
+            c = a + b;
+            a = b;
+            b = c;
         }
-
-        if (prime)
-            printf("%d ", i);
+        printf("nth fibonacci term = %d", b);
     }
 
     return 0;
