@@ -1,24 +1,28 @@
-#include<stdio.h>
+#include <stdio.h>
 
-int main()
- {
-    int n, a = 0, b = 1, c, i;
+int main() {
+    int n, temp, digit, sum = 0, fact, i;
 
-    printf("enter n: ");
+    printf("Enter a number: ");
     scanf("%d", &n);
 
-    if(n==1)
-        printf("nth fibonacci term = %d", a);
-    else if(n==2)
-        printf("nth fibonacci term = %d", b);
-    else{
-        for(i = 3; i <= n; i++) {
-            c = a + b;
-            a = b;
-            b = c;
+    temp = n;
+
+    while(temp > 0) {
+        digit = temp % 10;
+
+        fact = 1;
+        for(i = 1; i <= digit; i++) {
+            fact = fact * i;
         }
-        printf("nth fibonacci term = %d", b);
+
+        sum = sum + fact;
+        temp = temp / 10;
     }
 
-    return 0;
+    if(sum == n)
+        printf("%d is a Strong Number", n);
+    else
+        printf("%d is not a Strong Number", n);
+return 0;
 }
