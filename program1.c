@@ -1,19 +1,27 @@
-#include<stdio.h>
-int main(){
-    int n,i,sum=0;
-    printf("enter the value of n : ");
-    scanf("%d",&n);
-    for(i=1;i<n;i++){
-        if(n%i==0){
-            sum=sum+i;
-        }
-    }
-    if(sum==n){
-        printf("the number is a perfect number ");
-    }
-    else{
-        printf("the number is not a perfect number ");
-    }
-    return 0;
+#include <stdio.h>
 
+int main() {
+    int n, binary[32], i = 0;
+
+    printf("Enter a decimal number: ");
+    scanf("%d", &n);
+
+    if (n == 0) {
+        printf("Binary = 0");
+        return 0;
+    }
+
+    while (n > 0) {
+        binary[i] = n % 2;  // Store remainder
+        n = n / 2;
+        i++;
+    }
+
+    printf("Binary = ");
+
+    for (int j = i - 1; j >= 0; j--) {
+        printf("%d", binary[j]);
+    }
+
+    return 0;
 }

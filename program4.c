@@ -1,19 +1,20 @@
 #include <stdio.h>
 
 int main() {
-    int n, i, largest = 1;
+    int x, n;
+    long long result = 1;
 
-    printf("Enter a number: ");
+    printf("Enter base (x): ");
+    scanf("%d", &x);
+
+    printf("Enter power (n): ");
     scanf("%d", &n);
 
-    for(i = 2; i <= n; i++) {
-        while(n % i == 0) {
-            largest = i;
-            n = n / i;
-        }
+    for(int i = 1; i <= n; i++) {
+        result = result * x;
     }
 
-    printf("Largest Prime Factor = %d", largest);
+    printf("%d^%d = %lld", x, n, result);
 
     return 0;
 }
