@@ -1,21 +1,13 @@
-#include <stdio.h>
-#include <math.h>
-
-int main() {
-    long long binary;
-    int decimal = 0, i = 0, remainder;
-
-    printf("Enter a binary number: ");
-    scanf("%lld", &binary);
-
-    while (binary != 0) {
-        remainder = binary % 10;
-        decimal += remainder * pow(2, i);
-        binary /= 10;
-        i++;
+#include<stdio.h>
+int main(){
+    int n;
+    printf("enter n :");
+    scanf("%d", &n);
+    for(int i=n; i>=1;i--){
+        for(int j=1;j<=i;j++){
+            printf("%d",j);
+        }
+        printf("\n");
     }
-
-    printf("Decimal = %d", decimal);
-
     return 0;
 }

@@ -1,27 +1,13 @@
-#include <stdio.h>
-
-int main() {
-    int n, binary[32], i = 0;
-
-    printf("Enter a decimal number: ");
-    scanf("%d", &n);
-
-    if (n == 0) {
-        printf("Binary = 0");
-        return 0;
+#include<stdio.h>
+int main(){
+    int n;
+    printf("enter n:");
+    scanf("%d",&n);
+    for(int i=n;i>=1;i--){
+        for(int j=1;j<=i;j++){
+            printf("*");
+        }
+        printf("\n");
     }
-
-    while (n > 0) {
-        binary[i] = n % 2;  // Store remainder
-        n = n / 2;
-        i++;
-    }
-
-    printf("Binary = ");
-
-    for (int j = i - 1; j >= 0; j--) {
-        printf("%d", binary[j]);
-    }
-
     return 0;
 }

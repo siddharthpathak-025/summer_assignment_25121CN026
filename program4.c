@@ -1,20 +1,19 @@
-#include <stdio.h>
-
-int main() {
-    int x, n;
-    long long result = 1;
-
-    printf("Enter base (x): ");
-    scanf("%d", &x);
-
-    printf("Enter power (n): ");
+#include<stdio.h>
+int main(){
+    int n;
+    printf("enter n :");
     scanf("%d", &n);
-
-    for(int i = 1; i <= n; i++) {
-        result = result * x;
+    for(int i=1; i<=n;i++){
+        for(int j=1;j<=n;j++){
+            if(i==1||i==n||j==1||j==n){
+                printf("*");
+            }
+            else{
+                printf(" ");
+            }
+        }
+        printf("\n");
     }
-
-    printf("%d^%d = %lld", x, n, result);
-
     return 0;
+
 }
